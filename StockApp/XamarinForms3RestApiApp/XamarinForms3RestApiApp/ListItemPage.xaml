@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="XamarinForms3RestApiApp.ListItemPage" xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="{Binding name}" VerticalTextAlignment="Center" VerticalOptions="StartAndExpand
+            " FontSize="Large" HorizontalOptions="CenterAndExpand"/>
+        <Grid VerticalOptions="StartAndExpand" HorizontalOptions="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.8*" />
+                <ColumnDefinition Width="0.3*" />
+            </Grid.ColumnDefinitions>
+            <StackLayout Padding="100,-50,0,0" HorizontalOptions="Center">   
+            <gauge:SfCircularGauge Grid.Row="0" >
+               <gauge:SfCircularGauge.Headers>
+            <gauge:Header Text="{Binding price}" Font="30" TextSize="30" ForegroundColor="Black" />
+        </gauge:SfCircularGauge.Headers>
+                <gauge:SfCircularGauge.Scales>
+                    <gauge:Scale ShowFirstLabel="true" ShowLastLabel="false" StartAngle="0" SweepAngle="360" RimColor="DeepSkyBlue" RimThickness="20" RadiusFactor="1" ShowTicks="False" StartValue="0" EndValue="500" Interval="50" LabelOffset="0.75" LabelColor="#424242" LabelFontSize="15">
+                        <gauge:Scale.Pointers>
+                            <gauge:RangePointer StartOffset="0.85" EndOffset="1" Color="Gray" Value="{Binding price}" EnableAnimation="true" />
+                        </gauge:Scale.Pointers>
+                    </gauge:Scale>
+                </gauge:SfCircularGauge.Scales>
+            </gauge:SfCircularGauge>
+                    </StackLayout> 
+        </Grid>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
